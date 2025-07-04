@@ -1,211 +1,199 @@
-:root {
-  --bg-color: #e0e5ec;            
-  --card-bg: #ffffff;             
-  --text-color: #2d3748;          
-  --accent-color: #2c7a7b;       
-  --accent-dark: #285e61;         
-  --border-color: #cbd5e0;        
-  --input-bg: #f7fafc;            
-  --header-bg: #f5f7fa;           
-  --footer-bg: #f0f3f7;           
-}
-
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+/* Cabeçalho */
 header {
-  background-color: var(--header-bg);
-  text-align: center;
-  padding: 40px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 0;
 }
 
-header h1 {
-  color: var(--accent-color);
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-header p {
+.navbar h1 {
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Seções principais */
+.section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #222;
+}
+
+.section p {
+  font-size: 1.1rem;
   color: #555;
 }
 
-nav ul {
+/* Formação */
+.conteudo {
   display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 30px;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 8px 16px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
+.conteudo div {
+  background-color: #fff;
+  padding: 1rem;
+  border-left: 5px solid #00bcd4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-nav ul li a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-}
-
-main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-h2 {
-  color: var(--accent-color);
-  font-size: 1.8em;
-  margin-bottom: 15px;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
+/* Portfólio */
+.projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .card {
-  background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  margin-bottom: 20px;
-  border-left: 4px solid var(--accent-color);
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h3 {
-  margin-bottom: 10px;
-  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
 .card p {
-  color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
+  color: #555;
 }
 
 .card a {
-  text-decoration: none;
-  color: var(--accent-color);
-  font-weight: bold;
-}
-
-form {
-  background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--border-color);
-}
-
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--input-bg);
-  font-size: 1em;
-  color: var(--text-color);
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-button {
-  background-color: var(--accent-color);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
   color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
-button:hover {
-  background-color: var(--accent-dark);
+.card a:hover {
+  background-color: #0097a7;
 }
 
-footer {
-  background-color: var(--footer-bg);
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9em;
-  color: #555;
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
-}
-
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent-color);
-  margin-bottom: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.intro-container {
+/* Formulário de Contato */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
 }
 
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease;
+form label {
+  font-weight: bold;
 }
 
-#preloader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
+form input,
+form textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.loader-text {
-  font-size: 2em;
-  color: var(--accent-color);
-  animation: fadeInOut 2s ease-in-out infinite;
+form button {
+  width: 150px;
+  padding: 0.7rem;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+form button:hover {
+  background-color: #0097a7;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #222;
+  color: #fff;
+  margin-top: 3rem;
+}
+
+footer hr {
+  margin: 1rem auto;
+  width: 60%;
+  border: 0.5px solid #444;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .conteudo {
+    flex-direction: column;
+  }
 }
