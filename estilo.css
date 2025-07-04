@@ -1,480 +1,211 @@
-/* Reset de margens, paddings e definição de fonte padrão */
+:root {
+  --bg-color: #e0e5ec;            
+  --card-bg: #ffffff;             
+  --text-color: #2d3748;          
+  --accent-color: #2c7a7b;       
+  --accent-dark: #285e61;         
+  --border-color: #cbd5e0;        
+  --input-bg: #f7fafc;            
+  --header-bg: #f5f7fa;           
+  --footer-bg: #f0f3f7;           
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif, arial;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilização da barra de navegação */
-nav {
-  width: 100%;
-  background-image: url(imagem/download.jpg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  box-shadow: 0px 0px 20px #000000  ;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Título da navegação */
-nav h1 {
-  margin: 0;
-  font-size: 25px;
-  color: #075effbe;
+header {
+  background-color: var(--header-bg);
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* Lista de links do menu */
+header h1 {
+  color: var(--accent-color);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #555;
+}
+
 nav ul {
+  display: flex;
+  justify-content: center;
   list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  margin: 0 8px;
-  padding: 0;
+  gap: 30px;
+  margin-top: 20px;
 }
 
-/* Links do menu */
-nav a {
+nav ul li a {
   text-decoration: none;
-  color: #ffffffbe; /* Cor dos links */
-  font-weight: bold;
-  transition: color 0.3s ease;
-  border: solid 1px;
-  padding: 7px;
-  border-radius: 7px;
+  color: var(--text-color);
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Efeito hover nos links do menu */
-nav a:hover {
-  color: #ff9900; /* Cor ao passar o mouse */
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
-/* Corpo principal da página */
-.main {
-  width: 90%;
-  margin: auto;
-  position: relative;
-  padding: 70px;
-}
-
-/* Efeito de fundo com imagem e sombra  */
-.main::before {
-  position: absolute;
-  background-image: url(imagem/download\ \(3\).jpg);
-  content: "";
-  inset: 0;
-  background-position: center;
-  z-index: -1;
-  opacity: 0.9;
-  margin: 60px 60px;
-  box-shadow: #01235c 0px 0px 30px;
-  border-radius: 15px;
-} 
-
-/* estilização do Título da seção início */
-#inicio h2 {
-  color: #075effbe;
-  text-align: center;
-  padding: 30px;
-  font-size: 30px;
-  text-shadow: 2px 0px 10px #111111 ;
-}
-
-/* estilização do Subtítulo da seção início */
-#inicio h3 {
-  color: #ffffffbe;
-  text-align: center;
-  margin: 0 0 20px;
-  text-decoration: underline;
-  font-size: 20px;
-  text-shadow: 2px 0px 10px #111111;
-  text-transform: capitalize;
-}
-
-/* estilização dos Parágrafos da seção início */
-#inicio p {
-  text-align: center;
-  margin:  20px;
-  line-height: 1.5;
-  color: #ffffffbe;
-}
-
-/* estilo do Título da seção Sobre Mim */
-#SobreMim h2 {
-  color: #075effbe;
-  text-align: center;
-  padding: 30px;
-  font-size: 30px;
-  text-shadow: 0px 0px 10px #111111 ;
-}
-
-/* Parágrafo da seção Sobre Mim */
-#SobreMim p {
-  text-align: center;
-  margin: 20px;
-  line-height: 1.5;
-  color: #ffffffbe;
-}
-
-/* Título da seção Formação */
-#formacao h2 {
-  color: #075effbe;
-  text-align: center;
-  padding: 30px;
-  font-size: 30px;
-  text-shadow: 0px 0px 10px #111111 ;
-}
-
-/* estilização do a classe de escola */
-.escola {
-  text-align: center;
-  margin: auto;
-  line-height: 1.5;
-  background-color: #01235c;
-  padding: 10px;
-  width: 40%;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px #000000;
-  margin-bottom: 40px;
-}
-
-/* Efeito hover na classe escola */
-.escola:hover {
-  transform: scale(1.03);
-  transition: transform 0.5s steps(8, end);
-}
-
-/* Título da classe escola */
-.escola h3 {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-/* Parágrafo da classe escola */
-.escola p{
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* estilização de classe graduação */
-.graduacao {
-  text-align: center;
-  margin: auto;
-  line-height: 1.5;
-  background-color: #01235c;
-  padding: 10px;
-  width: 40%;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px #000000;
-  margin-bottom: 20px;
-  margin-bottom: 40px;
-}
-
-/* Efeito hover na graduação */
-.graduacao:hover {
-  transform: scale(1.03);
-  transition: transform 0.5s steps(8, end);
-}
-
-/* Título da classe graduação */
-.graduacao h3 {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-/* Parágrafo da classe graduação */
-.graduacao p {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/*  estilizando a classe de curso */
-.curso{
-  text-align: center;
-  margin: auto;
-  line-height: 1.5;
-  background-color: #01235c;
-  padding: 10px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px #000000;
-  margin-bottom: 20px;
-  margin-bottom: 40px;
-  width: 40%;
-}
-
-/* Efeito hover na classe curso */
-.curso:hover {
-  transform: scale(1.03);
-  transition: transform 0.5s steps(8, end);
-}
-
-/* Título do curso */
-.curso h3 {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 20px;
-  padding: 10px;
-}
-
-/* Parágrafo do curso */
-.curso p {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.8;
-  width: 100%;
-}
-
-/* Título da seção portfólio */
-.portifolio h2{
-  color: #075effbe;
-  text-align: center;
-  padding: 30px;
-  font-size: 30px;
-  text-shadow: 0px 0px 10px #111111 ;
-}
-
-/* Parágrafo da seção portfólio */
-.portifolio p{
-  text-align: center;
-  margin: 40px 0;
-  line-height: 1.5;
-  color: #ffffffbe;
-}
-
-/* estilizando classe de projetos */
-.projetos {
-  text-align: center;
-  margin: auto;
-  line-height: 1.5;
-  background-color: #01235c;
-  padding: 10px;
-  width: 40%;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px #000000;
-  margin-bottom: 40px;
-}
-
-/* Efeito hover nos projetos */
-.projetos:hover {
-  transform: scale(1.03);
-  transition: transform 0.5s steps(8, end);
-}
-
-/* Título dos projetos */
-.projetos h3 {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 20px;
-} 
-
-/* Parágrafo dos projetos */
-.projetos p {
-  color: #ffffffbe;
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.8;
-  width: 100%;
-} 
-
-/* Link dos projetos */
-.projetos a {
-  display: flex;
-  text-decoration: none;
-  color: #ffffffbe;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding: 7px;
-  border-radius: 7px;
-  width: 50%;
-  margin: 30px auto;
-  justify-content: center;
-  background-color: #ff9900;
-}
-
-/* Efeito hover nos links dos projetos */
-.projetos a:hover {
-  color: #01235c; /* Cor ao passar o mouse */
-  background-color: #cc7a00;
-  transform: scale3d(1.05, 1.05, 1);
-}
-
-/*  contatos (ícones de redes sociais) */
-.contato {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  margin: auto;
-  padding-bottom: 40px;
-}
-
-/* Título da seção de contato */
-#contato h2 {
-  color: #075effbe;
-  justify-content: center;
-  text-align: center;
-  text-shadow: 0px 0px 10px #111111 ;
-  font-size: 30px;
-  margin: auto;
-  padding-bottom: 15px;
-}
-
-/* Imagens dos ícones de contato */
-.contato a img {
-  width: 70%;
-  margin: auto;
-  height: auto;
-}
-
-/* Estilização do formulário de contato */
-form {
-  max-width: 500px;
-  margin: auto;
+main {
+  max-width: 900px;
+  margin: 40px auto;
   padding: 20px;
-  background-color: #222;
-  color: #ffffffbe;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  margin-bottom: 40px;
 }
 
-/* Campos do formulário */
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  color: var(--accent-color);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.card p {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+form {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
 input, textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  font-size: 1em;
+  color: var(--text-color);
 }
 
-/* Efeito de foco nos campos do formulário */
 input:focus, textarea:focus {
-  outline: 2px solid #ff9900;
+  outline: none;
+  border-color: var(--accent-color);
 }
 
-/* Botão do formulário */
 button {
-  background-color: #ff9900;
-  color: white;
-  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
-/* Efeito hover no botão */
 button:hover {
-  background-color: #cc7a00;
+  background-color: var(--accent-dark);
 }
 
-/* Rodapé da página */
-.footer {
-  background-image: url(imagem/download.jpg);
-  color: #ffffffbe;
+footer {
+  background-color: var(--footer-bg);
   text-align: center;
-  padding: 20px;
-  position: relative;
+  padding: 30px;
+  font-size: 0.9em;
+  color: #555;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
 }
 
-/* Parágrafo do rodapé */
-.footer p {
-  margin: 10px 0;
-  font-size: 15px;
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-/* Título do rodapé */
-.footer h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: #ffffffbe;
+.loader-text {
+  font-size: 2em;
+  color: var(--accent-color);
+  animation: fadeInOut 2s ease-in-out infinite;
 }
 
-/* Responsividade para telas menores */
-@media (max-width:890px) {
-  .main {
-    width: 90%;
-    padding: 60px;
-  }
-  
-  .contato {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .escola, .graduacao, .curso, .projetos {
-    width: 80%;
-  }
-  .contato a img{
-    margin: auto;
-    width: 70%;
-    height:auto;
-  }
-  form {
-    width: 90%;
-  }
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
-
-/* Ajustes para telas até 700px */
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul {
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-  }
-}
-
-/* Ajustes para telas até 600px */
-@media (max-width:600) {
-  .main {
-    width: 100%;
-    padding: 80px;
-  }
-  
-  .contato {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-}
-
-/* Ajustes para telas até 530px */
-@media all and (max-width:530px) {
-  nav{
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul{
-    flex-direction: column;
-    gap: 25px;
-  }
-  .main {
-    width: 100%;
-    padding: 60px;
-  }
-}
-
-/* Ajustes para telas até 410px */
-@media all and (max-width:410px) {
-   .escola, .graduacao, .curso, .projetos {
-    width: 80%;
-  } 
-  .curso h3{
-    font-size: 15px;
-  }
-}
-
